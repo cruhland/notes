@@ -31,7 +31,109 @@
 
 ## Introduction
 
-TODO read in full
+### Where does this specification fit?
+
+- Specs I definitely want to read: JavaScript, DOM, CSS, HTTP
+- Specs I might want to read: SVG, WebIDL, MathML, Unicode, MIME, URL
+
+### Audience
+
+- Knowledge of DOM is required for a complete understanding of the
+spec
+- Helpful but optional knowledge: Web IDL, HTTP, XML, Unicode,
+character encodings, JavaScript, CSS
+
+### Scope
+
+The spec is focused on specifying semantics of "normal" Web pages and
+Web applications. Applications of HTML in areas that require
+high-performance software are not covered. Customized presentation of
+HTML documents is also not covered by the spec (but see the CSS
+spec).
+
+### History
+
+Things seem to be a mess for Web specifications. The W3C stopped
+evolving HTML in the late 1990s and early 2000s, and instead focused
+on a replacement technology, called XHTML. But of course, the Web
+itself never adoped XHTML in any real way, and browser vendors (Opera,
+Mozilla, and Apple) split off from the W3C in 2004 to form the WHATWG,
+which started improving the HTML spec once again.
+
+Eventually the W3C got on board with the new HTML spec and worked with
+the WHATWG for a while, but in 2011 the efforts split again. The W3C
+wanted to create a final spec for HTML5, while the WHATWG preferred to
+continuously maintain a "Living Standard".
+
+In my opinion, given the immaturity of the Web, the WHATWG has the
+right approach. Perhaps there needs to be a more formal way of saying
+which parts of the standard an implementation conforms to, but an
+immutable spec with a definite version number is too rigid: no browser
+will ever implement all of HTML5, or only HTML5, as the W3C spec
+defines it. Rather than introduce artifical separations between
+versions of a spec, a living standard seems more in line with the
+practice of software development.
+
+### Design notes
+
+Due to the development history of HTML, the spec has many
+inconsistencies and redundancies. Some will take a while to fix, and
+some others will probably never be fixed, as they are too heavily
+relied on to change now. Still, now that efforts at making better
+specs are succeeding, some design goals are being pursued:
+
+- Serializability of script execution: no script should be able to
+  tell if other scripts are executing concurrently, to prevent Web
+  developers from dealing with multithreaded programming.
+- Compliance with other specs: if this cannot be achieved, the
+  violations must be explicitly noted.
+- Extensibility: there are a number of built-in mechanisms for
+  extending the meaning of HTML documents, while still conforming to
+  the spec.
+
+### HTML vs XHTML
+
+- HTML is used by most Web pages, and has lenient parsing so as to be
+backwards-compatible with older documents.
+- XHTML is a specific kind of XML that represents HTML documents. It
+has very strict parsing requirements.
+- The DOM is an in-memory representation of HTML.
+
+Not all documents in one representation can be converted to documents
+in other representations.
+
+### How to read this specification
+
+From this section, where producers are document authors and consumers
+are things like Web browsers:
+
+> Requirements on producers have no bearing whatsoever on consumers.
+
+These notes will focus on the producer side since I'm interested in
+writing Web pages, not implementing a browser.
+
+### Privacy concerns
+
+Some features of HTML can be used to identify individual users on the
+Internet. This can be a good thing, such as using cookies to maintain
+a user's session with a Web site. But it can also be a bad thing,
+revealing demographic information that could be used against the
+user. Features of HTML that could be used for fingerprinting are
+marked in the spec with a fingerprint symbol. Note that this symbol is
+not comprehensive, as almost anything can be used for fingerprinting
+with enough analysis.
+
+### A quick introduction to HTML
+
+Good summary of the basics. One interesting statement:
+
+> Since DOM trees are used as the way to represent HTML documents when
+> they are processed and presented by implementations (especially
+> interactive implementations like Web browsers), this specification
+> is mostly phrased in terms of DOM trees, instead of the markup
+> described above.
+
+TODO Finish section
 
 ## Common infrastructure
 
