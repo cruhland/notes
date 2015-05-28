@@ -28,3 +28,20 @@ Notes taken while reading [the documentation](http://www.scala-sbt.org/0.13/docs
 1. [Index](http://www.scala-sbt.org/0.13/docs/Name-Index.html)
 
     A handy "cheat sheet" of the most common names, symbols, and objects that are used in a build defintion.
+
+## General Information
+
+Plugin developers can make use of the following resources:
+- [sbt GitHub organization](http://www.scala-sbt.org/0.13/docs/Community-Plugins.html#sbt+Organization): centralizes plugin repos without taking ownership away from developers.
+- [free Ivy repository](http://www.scala-sbt.org/0.13/docs/Community-Plugins.html#Community+Ivy+Repository): hosts plugin artifacts. See the [rules for publishing artifacts](http://www.scala-sbt.org/0.13/docs/Repository-Roles.html#Community+Repository+Policy).
+- [Bintray repo (beta)](http://www.scala-sbt.org/0.13/docs/Bintray-For-Plugins.html#Bintray+For+Plugins): another method of grouping plugin projects? Not looking into it now.
+
+There's also [a long list of known plugins](http://www.scala-sbt.org/0.13/docs/Community-Plugins.html#Available+Plugins).
+
+[Environment-specific config](http://www.scala-sbt.org/0.13/docs/Setup-Notes.html) (e.g. system encoding, heap space, permgen)
+
+[Publishing artifacts publically](http://www.scala-sbt.org/0.13/docs/Using-Sonatype.html#Summary)
+
+[Ideas for enhancing sbt](http://www.scala-sbt.org/0.13/docs/Contibuting-to-sbt.html)
+
+[Changelog](http://www.scala-sbt.org/0.13/docs/Changes.html)
