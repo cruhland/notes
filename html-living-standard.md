@@ -133,7 +133,42 @@ Good summary of the basics. One interesting statement:
 > is mostly phrased in terms of DOM trees, instead of the markup
 > described above.
 
-TODO Finish section
+#### Writing secure applications with HTML
+
+- Interactive applications created with HTML can have vulnerabilities
+- Many potential attacks are through cross-origin actions
+- Example: not validating and/or escaping user input
+    - Attacks: cross-site scripting (XSS), SQL injection
+    - If the input is displayed via HTML, and the input was itself
+      HTML, then there are various ways for that HTML to execute a
+      script.
+- Example: cross-site request forgery (CSRF)
+    - Forms can be submitted from other origins, impersonating a user
+    - Prevent attacks by using hidden tokens or checking `Origin`
+      headers
+- Example: clickjacking
+    - Tricking a user into peforming an unwanted action
+    - Can be done by putting the dangerous interface in an iframe
+    - Prevent by having your site become inactive if rendered in an
+      iframe
+
+#### Common pitfalls to avoid when using the scripting APIs
+
+Make sure elements and their event handlers are created in the same
+script, so that the event is always caught. Otherwise, an event might
+fire after an element is created but before its handler is added.
+
+#### How to catch mistakes when writing HTML: validators and conformance checkers
+
+See list at https://validator.whatwg.org/.
+
+### Conformance requirements for authors
+
+- Presentational markup causes problems and has been removed from
+HTML. Use CSS instead.
+- Some syntax that would technically be valid has been designated
+invalid to avoid causing problems for authors. Use a conformance
+checker.
 
 ## Common infrastructure
 
