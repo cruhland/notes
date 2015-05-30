@@ -172,7 +172,42 @@ checker.
 
 ## Common infrastructure
 
-TODO outline, then fill in details as needed
+### 2.1 Terminology
+
+Definitions of terms used throughout the spec.
+
+### 2.2 Conformance requirements
+
+Describes what needs to be done to meet the specification, and how the
+spec relates to other specs, including which terms are defined
+elsewhere.
+
+### 2.3 Case-sensitivity and string comparison
+
+Defines precise terminology.
+
+### 2.4 Common microsyntaxes
+
+Precise definitions of the data types used in the spec, including how
+to parse their serialized values.
+
+### 2.5 URLs
+
+Precise definitions of URL terminology and algorithms, such as
+resolving URLs and dynamically changing document base URLs.
+
+### 2.6 Fetching resources
+
+Precise definitions and algorithms for retrieving remote data, and
+related security concerns.
+
+### 2.7 Common DOM interfaces
+
+Basic rules and data types for the DOM.
+
+### 2.8 Namespaces
+
+Provides namespace URLs.
 
 ## Semantics, structure, and APIs of HTML documents
 
