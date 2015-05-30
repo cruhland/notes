@@ -319,9 +319,141 @@ Ignoring this section.
 
 Ignoring this section.
 
-## The elements of HTML
+## 4 The elements of HTML
 
-TODO outline, then fill in details as needed
+### 4.1 The root element
+
+Describes features of the `html` element. (TODO more info)
+
+### 4.2 Document metadata
+
+Covers the following elements:
+
+- `head` (TODO)
+- `title` (TODO)
+- `base` (TODO)
+- `link` (TODO)
+- `meta` (TODO)
+- `style` (TODO)
+
+### 4.3 Sections
+
+Covers the following elements:
+
+- `body` (TODO)
+- `article` (TODO short)
+- `section` (TODO short)
+- `nav` (TODO short)
+- `aside` (TODO short)
+- `h1`-`h6` (TODO short)
+- `hgroup` (TODO short)
+- `header` (TODO short)
+- `footer` (TODO short)
+- `address`
+
+There's also a lengthy set of examples about how to use these elements
+appropriately.
+
+### 4.4 Grouping content
+
+Covers the following elements:
+
+- `p` (TODO)
+- `hr` (TODO short)
+- `pre` (TODO)
+- `blockquote` (TODO short)
+- `ol` (TODO)
+- `ul` (TODO)
+- `li` (TODO)
+- `dl` (TODO)
+- `dt` (TODO)
+- `dd` (TODO)
+- `figure` (TODO short)
+- `figcaption` (TODO short)
+- `main` (TODO short)
+- `div` (TODO)
+
+### 4.5 Text-level semantics
+
+Covers the following elements:
+
+- `a` (TODO short)
+- `em` (TODO short)
+- `strong` (TODO short)
+- `small` (TODO short)
+- `s` (TODO short)
+- `cite` (TODO)
+- `q` (TODO)
+- `dfn` (TODO short)
+- `abbr` (TODO short)
+- `ruby`
+- `rt`
+- `rp`
+- `data` (TODO short)
+- `time` (TODO short)
+- `code` (TODO short)
+- `var` (TODO)
+- `samp` (TODO)
+- `kbd` (TODO)
+- `sub`, `sup` (TODO short)
+- `i` (TODO short)
+- `b` (TODO short)
+- `u` (TODO short)
+- `mark` (TODO short)
+- `bdi`
+- `bdo`
+- `span` (TODO)
+- `br` (TODO)
+- `wbr` (TODO)
+
+A
+[usage summary](https://html.spec.whatwg.org/multipage/semantics.html#usage-summary)
+is provided at the end of this section.
+
+### 4.6 Links
+
+TODO Short summary
+
+### 4.7 Edits
+
+TODO Short summary
+
+### 4.8 Embedded content
+
+TODO Short summary
+
+TODO MathML
+
+### 4.9 Tabular data
+
+TODO In full
+
+### 4.10 Forms
+
+TODO Short summary
+
+### 4.11 Interactive elements
+
+TODO Short summary
+
+TODO Commands, specifically for buttons
+
+### 4.12 Scripting
+
+TODO Subsections 1-3
+
+### 4.13 Common idioms without dedicated elements
+
+TODO Outline subsections
+
+### 4.14 Disabled elements
+
+Specifies which elements can be _actually disabled_.
+
+### 4.15 Matching elements using selectors
+
+Details about various ways HTML elements can be found using
+selectors.
 
 ## User interaction
 
