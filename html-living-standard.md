@@ -211,7 +211,37 @@ Provides namespace URLs.
 
 ## Semantics, structure, and APIs of HTML documents
 
-TODO mostly read
+### 3.1 Documents
+
+Details about the `Document` DOM interface.
+
+### 3.2 Elements
+
+Description of the common parts of all element definitions.
+
+#### 3.2.1 Semantics
+
+- Elements have defined semantics, which allows them to be processed
+by automated tools to convey those semantics to the user. Document
+authors, and user agent developers, must not use or present elements
+in a way inconsistent with their semantics.
+- Document authors must not use elements, attributes, or attribute
+values in an invalid way, since this prevents HTML from being
+extended.
+- User agents must update their display of the document if the
+document structure is changed dynamically.
+
+#### 3.2.2 Elements in the DOM
+
+#### 3.2.3 Element definitions
+
+#### 3.2.4 Content models
+
+#### 3.2.5 Global attributes
+
+#### 3.2.6 Requirements relating to the bidirectional algorithm
+
+#### 3.2.7 Annotations for assistive technology products (ARIA)
 
 ## The elements of HTML
 
