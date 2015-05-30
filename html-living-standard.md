@@ -233,15 +233,91 @@ document structure is changed dynamically.
 
 #### 3.2.2 Elements in the DOM
 
+Nodes in the DOM represent elements in the document, and also have the
+same semantics as their elements do. The `HTMLElement` interface
+(defined here) must be implemented by all DOM element nodes.
+
 #### 3.2.3 Element definitions
+
+Description of the element definition format used in section 4. This
+section is short enough that I won't summarize it here, just read it
+from the spec.
 
 #### 3.2.4 Content models
 
+The **content model** of an element defines what that element is
+allowed to contain.
+
+Elements are grouped into various **categories** based on shared
+features. Here are the main categories (there are others). See the
+spec for which elements belong to each category.
+
+- _Metadata content_: elements that convey meaning about the document
+itself.
+- _Flow content_: elements that appear in the body of documents.
+- _Sectioning content_: elements that delimit the where headings and
+footers can be used.
+- _Heading content_: elements that define section headers.
+- _Phrasing content_: elements that appear in the text of the
+document, including withing paragraphs.
+- _Embedded content_: elements that insert resources into the
+document.
+- _Interactive content_: elements that the user can interact with.
+- _Palpable content_: seems to be elements that generally contain
+meaningful data, with respect to the intent of the document.
+- _Script-supporting elements_: elements that enable scripting
+functionality.
+
+_Transparent_ elements inherit their content models from their
+parents.
+
+A _paragraph_ is a contiguous sequence of phrasing content. There are
+some subtleties in this definition that I won't describe here. The `p`
+element can be used to make explicit paragraphs where there would
+otherwise be no distinction between them. This can be especially
+helpful when paragraphs would otherwise overlap, such as with fallback
+content.
+
 #### 3.2.5 Global attributes
+
+The _global attributes_ can be specified on any HTML element. There
+are also a collection of _event handler content attributes_ that can
+be specified on any HTML element; they provide JavaScript code that
+runs when the event they designate occurs on the element. Any
+attribute starting with the string `data-` is considered a _custom
+data attribute_ and can be placed on any HTML element.
+
+The following _global attributes_ are described in more detail in this
+section of the spec. I'll summarize only the ones that are interesting
+to me for now.
+
+- `id`: An identifier for the element. It must be unique in the
+document.
+- `title`: Provides _advisory information_ for the element. This is
+what creates a tooltip in browsers. Most browsers aren't very good
+about making this data accessible, though.
+- `lang`, `xml:lang`: Specifies the language of the element's contents.
+- `translate`: Specifies whether translation should be done on this
+element's contents during localization.
+- `xml:base`
+- `dir`: Specifies text directionality (e.g., right-to-left).
+- `class`: Specifies a space-separated set of CSS classes this element
+belongs to. In the DOM, use `className` or `classList` to access
+this attribute.
+- `style`: Specifies CSS for this element. Use is discouraged.
+
+The _custom data attributes_ are intended for private use by the
+document and its scripts. They are not intended to be processed by
+generic external tools. In the DOM, all of these attributes can be
+accessed with the `dataset` member.
 
 #### 3.2.6 Requirements relating to the bidirectional algorithm
 
+Ignoring this section.
+
 #### 3.2.7 Annotations for assistive technology products (ARIA)
+
+Ignoring this section.
 
 ## The elements of HTML
 
