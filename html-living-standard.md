@@ -343,16 +343,21 @@ Covers the following elements:
 
 Covers the following elements:
 
-- `body` (TODO)
-- `article` (TODO short)
-- `section` (TODO short)
-- `nav` (TODO short)
-- `aside` (TODO short)
-- `h1`-`h6` (TODO short)
-- `hgroup` (TODO short)
-- `header` (TODO short)
-- `footer` (TODO short)
-- `address`
+- `body`: the document content.
+- `article`: a "self-contained" portion of the document, that could
+  stand as a complete document on its own.
+- `section`: a generic grouping of related content, usually with a
+  heading.
+- `nav`: contains links for navigating around the document.
+- `aside`: content that is minimally related to the content around it;
+  a sidebar.
+- `h1`-`h6`: section headings of various importance.
+- `hgroup`: represents a multi-level heading (e.g. one with a
+  sub-heading) as a sequence of individual headings.
+- `header`: introductory content at the beginning of a section.
+- `footer`: concluding or supplementary content.
+- `address`: contact information for a portion of the document (not
+  used for arbitrary addresses).
 
 There's also a lengthy set of examples about how to use these elements
 appropriately.
