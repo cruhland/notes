@@ -477,26 +477,26 @@ WebIDL:
 ```scala
 trait HTMLTableElement extends HTMLElement {
 
-  // attribute HTMLTableCaptionElement? caption
+  var caption: Option[HTMLTableCaptionElement]
   def createCaption(): HTMLElement
   def deleteCaption(): Unit
 
-  // attribute HTMLTableSectionElement? tHead
+  var tHead: Option[HTMLTableSectionElement]
   def createTHead(): HTMLElement
   def deleteTHead(): Unit
 
-  // attribute HTMLTableSectionElement? tFoot
+  var tFoot: Option[HTMLTableSectionElement]
   def createTFoot(): HTMLElement
   def deleteTFoot(): Unit
 
-  // readonly attribute HTMLCollection tBodies
+  val tBodies: HTMLCollection
   def createTBody(): HTMLElement
 
-  // readonly attribute HTMLCollection rows
-  def insertRow(index: Long = -1): HTMLElement
-  def deleteRow(index: Long): Unit
+  val rows: HTMLCollection
+  def insertRow(index: Int = -1): HTMLElement
+  def deleteRow(index: Int): Unit
 
-  // attribute boolean sortable
+  var sortable: Boolean
   def stopSorting(): Unit
 
 }
