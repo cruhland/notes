@@ -109,6 +109,11 @@ as `optional ArgType argName = argValue`; in Scala, it is specified as
 
 #### 3.10.2 boolean
 
+The Web IDL values of this type are **true** and **false**.
+
+The equivalent Scala type is `Boolean`, with corresponding `true` and
+`false` values.
+
 #### 3.10.3 byte
 
 #### 3.10.4 octet
@@ -118,6 +123,10 @@ as `optional ArgType argName = argValue`; in Scala, it is specified as
 #### 3.10.6 unsigned short
 
 #### 3.10.7 long
+
+The Web IDL values of this type are integers _n_ such that
+-2,147,483,648 ≤ _n_ ≤ 2,147,483,647. The equivalent Scala type is
+`Int`.
 
 #### 3.10.8 unsigned long
 
@@ -150,6 +159,13 @@ as `optional ArgType argName = argValue`; in Scala, it is specified as
 #### 3.10.22 Callback function types
 
 #### 3.10.23 Nullable types — _T_?
+
+In Web IDL, given a type **T**, the nullable version of that type is
+**T?**. It has the same values as **T**, with the additional value
+**null**. The Scala equivalent of **T?** is `Option[T]`, and the
+equivalent of **null** is `None`. A non-null value **t** of type
+**T?** in Web IDL corresponds to `Some(t)` in Scala, where `t` is the
+Scala equivalent of **t**.
 
 #### 3.10.24 Sequences — sequence<_T_>
 
