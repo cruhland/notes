@@ -456,6 +456,52 @@ more information.
 
 #### 4.9.1 The `table` element
 
+The content model for the `table` element is the following sequential
+grammar:
+
+1. `caption?`
+1. `colgroup*`
+1. `thead?`
+1. `tfoot?`
+1. `tbody* | tr+`
+1. `tfoot?`
+
+Additional restrictions:
+
+- There can be at most one `tfoot` element.
+- At any point a `script` or `template` element can be included.
+
+The DOM interface is specified below, in my own Scala version of
+WebIDL:
+
+```scala
+trait HTMLTableElement extends HTMLElement {
+
+  // attribute HTMLTableCaptionElement? caption
+  def createCaption(): HTMLElement
+  def deleteCaption(): Unit
+
+  // attribute HTMLTableSectionElement? tHead
+  def createTHead(): HTMLElement
+  def deleteTHead(): Unit
+
+  // attribute HTMLTableSectionElement? tFoot
+  def createTFoot(): HTMLElement
+  def deleteTFoot(): Unit
+
+  // readonly attribute HTMLCollection tBodies
+  def createTBody(): HTMLElement
+
+  // readonly attribute HTMLCollection rows
+  def insertRow(index: Long = -1): HTMLElement
+  def deleteRow(index: Long): Unit
+
+  // attribute boolean sortable
+  def stopSorting(): Unit
+
+}
+```
+
 #### 4.9.2 The `caption` element
 
 #### 4.9.3 The `colgroup` element
