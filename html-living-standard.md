@@ -366,20 +366,28 @@ appropriately.
 
 Covers the following elements:
 
-- `p` (TODO)
-- `hr` (TODO short)
-- `pre` (TODO)
-- `blockquote` (TODO short)
-- `ol` (TODO)
-- `ul` (TODO)
-- `li` (TODO)
-- `dl` (TODO)
-- `dt` (TODO)
-- `dd` (TODO)
-- `figure` (TODO short)
-- `figcaption` (TODO short)
-- `main` (TODO short)
-- `div` (TODO)
+- `p`: paragraph.
+- `hr`: a "thematic break" between portions of content. Think
+  "horizontal rule".
+- `pre`: preformatted text; the structure is represented by the
+  literal arrangement of the characters (including whitespace), rather
+  than by HTML elements. Good for computer code.
+- `blockquote`: a chunk of content from another source.
+- `ol`: an ordered (e.g. numbered) list of items.
+- `ul`: an unordered (e.g. bulleted) list of items.
+- `li`: an item within a list element.
+- `dl`: a "description list" of name-value pairs. Canonical example is
+  a list of terms (names) and their definitions (values).
+- `dt`: the term (name) in a description list.
+- `dd`: the description (value) in a description list.
+- `figure`: a somewhat separate complete piece of content, possibly
+  captioned, that is referred to from the main content.
+- `figcaption`: a caption for figures.
+- `main`: indicates the "dominant" contents of its containing
+  element. Used when not implied by other elements.
+- `div`: an arbitrary grouping of content, with no intrinsic
+  meaning. Use as a catch-all, or to assist with technical issues like
+  styling adjacent pieces of content in the same way.
 
 ### 4.5 Text-level semantics
 
