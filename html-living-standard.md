@@ -435,17 +435,22 @@ is provided at the end of this section.
 
 ### 4.6 Links
 
-TODO Short summary
+TODO
 
 ### 4.7 Edits
 
-TODO Short summary
+Covers the following elements:
+
+- `ins`: added content.
+- `del`: removed content.
 
 ### 4.8 Embedded content
 
-TODO Short summary
+TODO
 
-TODO MathML
+Mathematical expressions may be embedded in HTML documents with MathML
+elements. See the [MathML standard](http://www.w3.org/TR/MathML/) for
+more information.
 
 ### 4.9 Tabular data
 
