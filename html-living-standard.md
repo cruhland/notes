@@ -454,7 +454,33 @@ more information.
 
 ### 4.9 Tabular data
 
-TODO In full
+#### 4.9.1 The `table` element
+
+#### 4.9.2 The `caption` element
+
+#### 4.9.3 The `colgroup` element
+
+#### 4.9.4 The `col` element
+
+#### 4.9.5 The `tbody` element
+
+#### 4.9.6 The `thead` element
+
+#### 4.9.7 The `tfoot` element
+
+#### 4.9.8 The `tr` element
+
+#### 4.9.9 The `td` element
+
+#### 4.9.10 The `th` element
+
+#### 4.9.11 Attributes common to `td` and `th` elements
+
+#### 4.9.12 Processing model
+
+#### 4.9.13 Table sorting model
+
+#### 4.9.14 Examples
 
 ### 4.10 Forms
 
