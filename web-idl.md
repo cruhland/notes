@@ -67,6 +67,26 @@ val identifier: Type
 
 #### 3.2.3 Operations
 
+A _regular operation_ in WebIDL corresponds to a method in Scala:
+
+```webidl
+ReturnType identifier(arguments...);
+```
+
+```scala
+def identifier(arguments...): ReturnType
+```
+
+The return type `void` in Web IDL corresponds to the type `Unit` in
+Scala.
+
+Each argument to an operation is given in Web IDL as `ArgType
+argName`. The equivalent in Scala is `argName: ArgType`.
+
+In Web IDL, an _optional argument_ with a _default value_ is specified
+as `optional ArgType argName = argValue`; in Scala, it is specified as
+`argName: ArgType = argValue`.
+
 #### 3.2.4 Special operations
 
 ### 3.3 Dictionaries
