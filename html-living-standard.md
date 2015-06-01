@@ -323,18 +323,21 @@ Ignoring this section.
 
 ### 4.1 The root element
 
-Describes features of the `html` element. (TODO more info)
+Describes features of the `html` element, which is the _root_, or
+top-level element in HTML documents.
 
 ### 4.2 Document metadata
 
 Covers the following elements:
 
-- `head` (TODO)
-- `title` (TODO)
-- `base` (TODO)
-- `link` (TODO)
-- `meta` (TODO)
-- `style` (TODO)
+- `head`: single location for document metadata.
+- `title`: the title or name of the document.
+- `base`: specifies the document base URL for resolving relative URLs
+  and following hyperlinks.
+- `link`: connects the document to other resources.
+- `meta`: catch-all element for representing metadata not covered by
+  the other metadata elements.
+- `style`: allows CSS to be specified directly in the document.
 
 ### 4.3 Sections
 
