@@ -105,6 +105,70 @@ as `optional ArgType argName = argValue`; in Scala, it is specified as
 
 ### 3.10 Types
 
+#### 3.10.1 any
+
+#### 3.10.2 boolean
+
+#### 3.10.3 byte
+
+#### 3.10.4 octet
+
+#### 3.10.5 short
+
+#### 3.10.6 unsigned short
+
+#### 3.10.7 long
+
+#### 3.10.8 unsigned long
+
+#### 3.10.9 long long
+
+#### 3.10.10 unsigned long long
+
+#### 3.10.11 float
+
+#### 3.10.12 unrestricted float
+
+#### 3.10.13 double
+
+#### 3.10.14 unrestricted double
+
+#### 3.10.15 DOMString
+
+#### 3.10.16 ByteString
+
+#### 3.10.17 USVString
+
+#### 3.10.18 object
+
+#### 3.10.19 Interface types
+
+#### 3.10.20 Dictionary types
+
+#### 3.10.21 Enumeration types
+
+#### 3.10.22 Callback function types
+
+#### 3.10.23 Nullable types — _T_?
+
+#### 3.10.24 Sequences — sequence<_T_>
+
+#### 3.10.25 Arrays — _T_[]
+
+#### 3.10.26 Promise types — Promise<_T_>
+
+#### 3.10.27 Union types
+
+#### 3.10.28 Date
+
+#### 3.10.29 RegExp
+
+#### 3.10.30 Error
+
+#### 3.10.31 DOMException
+
+#### 3.10.32 Buffer source types
+
 ### 3.11 Extended attributes
 
 ## 4 ECMAScript binding
