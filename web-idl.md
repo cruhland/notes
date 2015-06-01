@@ -11,6 +11,34 @@
 
 ### 3.2 Interfaces
 
+We can relate an interface to a `trait` in Scala:
+
+```webidl
+interface Example {
+  // interface members...
+};
+```
+
+```scala
+trait Example {
+  // interface members...
+}
+```
+
+Inheritance of interfaces can be mapped to trait inheritance:
+
+```webidl
+interface InheritanceExample : Example {
+  // interface members...
+}
+```
+
+```scala
+trait InheritanceExample extends Example {
+  // interface members...
+}
+```
+
 ### 3.3 Dictionaries
 
 ### 3.4 Exceptions
