@@ -43,6 +43,28 @@ trait InheritanceExample extends Example {
 
 #### 3.2.2 Attributes
 
+A _regular attribute_ in WebIDL corresponds to a mutable field in
+Scala:
+
+```webidl
+attribute Type identifier;
+```
+
+```scala
+var identifier: Type
+```
+
+A _read only_ attribute in WebIDL corresponds to an immutable field in
+Scala:
+
+```webidl
+readonly attribute Type identifier;
+```
+
+```scala
+val identifier: Type
+```
+
 #### 3.2.3 Operations
 
 #### 3.2.4 Special operations
