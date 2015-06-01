@@ -393,34 +393,41 @@ Covers the following elements:
 
 Covers the following elements:
 
-- `a` (TODO short)
-- `em` (TODO short)
-- `strong` (TODO short)
-- `small` (TODO short)
-- `s` (TODO short)
-- `cite` (TODO)
-- `q` (TODO)
-- `dfn` (TODO short)
-- `abbr` (TODO short)
+- `a`: a hyperlink.
+- `em`: emphasis.
+- `strong`: importance.
+- `small`: side comment, usually short; e.g., "tax not included".
+- `s`: inaccurate or irrelevant (but not deleted) content.
+- `cite`: the title of a work.
+- `q`: an inline quotation from some other source.
+- `dfn`: the "defining instance" of a term. The definition must be
+  nearby.
+- `abbr`: an abbreviation.
 - `ruby`
 - `rt`
 - `rp`
-- `data` (TODO short)
-- `time` (TODO short)
-- `code` (TODO short)
-- `var` (TODO)
-- `samp` (TODO)
-- `kbd` (TODO)
-- `sub`, `sup` (TODO short)
-- `i` (TODO short)
-- `b` (TODO short)
-- `u` (TODO short)
-- `mark` (TODO short)
+- `data`: associates a machine-readable form of data with its
+  human-readable form.
+- `time`: same as the `data` element, but specific to times and dates.
+- `code`: a piece of computer code.
+- `var`: a mathematical/programming variable.
+- `samp`: sample output from a computer.
+- `kbd`: user input to a computer.
+- `sub`: supscript.
+- `sup`: superscript.
+- `i`: content in an alternate "voice". Traditionally meant italic
+  text.
+- `b`: content to which attention should be drawn. Traditionally meant
+  bold text.
+- `u`: an unspecified text annotation. Traditionally meant underlined
+  text.
+- `mark`: a highlighted run of text.
 - `bdi`
 - `bdo`
-- `span` (TODO)
-- `br` (TODO)
-- `wbr` (TODO)
+- `span`: has no instrinsic meaning, but can be useful for technical
+  purposes like styling.
+- `br`: intentional line break.
+- `wbr`: potential line break for when text must be wrapped.
 
 A
 [usage summary](https://html.spec.whatwg.org/multipage/semantics.html#usage-summary)
