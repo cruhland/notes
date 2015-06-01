@@ -477,23 +477,67 @@ WebIDL:
 ```scala
 trait HTMLTableElement extends HTMLElement {
 
+  /** Gets or sets the table's `caption` element. */
   var caption: Option[HTMLTableCaptionElement]
+
+  /** Ensures the table has a `caption` element, and returns it. */
   def createCaption(): HTMLElement
+
+  /** Ensures the table does not have a `caption` element. */
   def deleteCaption(): Unit
 
+  /** Gets or sets the table's `thead` element. */
   var tHead: Option[HTMLTableSectionElement]
+
+  /** Ensures the table has a `thead` element, and returns it. */
   def createTHead(): HTMLElement
+
+  /** Ensures the table does not have a `thead` element. */
   def deleteTHead(): Unit
 
+  /** Gets or sets the table's `tfoot` element. */
   var tFoot: Option[HTMLTableSectionElement]
+
+  /** Ensures the table has a `tfoot` element, and returns it. */
   def createTFoot(): HTMLElement
+
+  /** Ensures the table does not have a `tfoot` element. */
   def deleteTFoot(): Unit
 
+  /** An `HTMLCollection` of the `tbody` elements of the table. */
   val tBodies: HTMLCollection
+
+  /** Creates a `tbody` element, inserts it into the table, and
+    * returns it.
+    */
   def createTBody(): HTMLElement
 
+  /** An `HTMLCollection` of the `tr` elements of the table. */
   val rows: HTMLCollection
+
+  /** Creates a `tr` element, along with a `tbody` if required, and
+    * inserts them into the table at the position given by `index`.
+    *
+    * The position is relative to the rows in the table. The index -1
+    * is equivalent to inserting at the end of the table.
+    *
+    * @throws IndexSizeError
+    *   if `index` is less than -1 or greater than the number of
+    *   rows.
+    *
+    * @return The created `tr` element.
+    */
   def insertRow(index: Int = -1): HTMLElement
+
+  /** Removes the `tr` element at position `index` in the table.
+    *
+    * The position is relative to the rows in the table. The index -1
+    * is equivalent to deleting the last row of the table.
+    *
+    * @throws IndexSizeError
+    *   if `index` is less than -1, greater than the last row's index,
+    *   or if there are no rows.
+    */
   def deleteRow(index: Int): Unit
 
   var sortable: Boolean
