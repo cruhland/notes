@@ -39,6 +39,14 @@ trait InheritanceExample extends Example {
 }
 ```
 
+#### 3.2.1 Constants
+
+#### 3.2.2 Attributes
+
+#### 3.2.3 Operations
+
+#### 3.2.4 Special operations
+
 ### 3.3 Dictionaries
 
 ### 3.4 Exceptions
