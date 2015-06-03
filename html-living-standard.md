@@ -575,6 +575,11 @@ trait HTMLTableColElement extends HTMLElement {
 
 #### 4.9.4 The `col` element
 
+A group of one or more columns in its parent `colgroup`, which is
+itself part of a `table`. Contains no content and is a _void
+element_. Its DOM interface is `HTMLTableColElement`, the same as
+`colgroup`.
+
 #### 4.9.5 The `tbody` element
 
 #### 4.9.6 The `thead` element
