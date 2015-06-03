@@ -226,6 +226,19 @@ Scala equivalent of **t**.
 
 #### 4.3.13 [PutForwards]
 
+Allows the value of a `readonly` attribute to be set, but in a special
+way. Given the following attribute declaration:
+
+```webidl
+interface I {
+  [PutForwards=x] readonly attribute T y;
+}
+```
+
+And given a value `i` of interface `I`, then the assignment `i.y = v`
+causes the assignment `i.y.x = v`. Note that this requires `x` to be
+a writable attribute of `T`.
+
 #### 4.3.14 [Replaceable]
 
 #### 4.3.15 [SameObject]

@@ -691,9 +691,69 @@ trait HTMLTableRowElement extends HTMLElement {
 
 #### 4.9.9 The `td` element
 
+A table data cell.
+
+DOM interface (Scala Web IDL):
+
+```scala
+trait HTMLTableDataCellElement extends HTMLTableCellElement
+```
+
 #### 4.9.10 The `th` element
 
+A table header cell. The `scope` attribute defines to which cells this
+header applies. The `abbr` attribute defines an alternate description
+to be used when referring to this header.
+
+DOM interface (Scala Web IDL):
+
+```scala
+trait HTMLTableHeaderCellElement extends HTMLTableCellElement {
+
+  var scope: DOMString
+
+  var abbr: DOMString
+
+  var sorted: DOMString
+
+  def sort(): Unit
+
+}
+```
+
 #### 4.9.11 Attributes common to `td` and `th` elements
+
+The `colspan` and `rowspan` attributes can appear on `td` and `th`
+element, and specify how many columns or rows, respectively, the cell
+takes up. Cells cannot be defined to be overlapping using these
+attributes.
+
+The `headers` attribute contains a space-separated list of the IDs of
+`th` elements in the table. It defines which headers are _directly
+targeted_ by the `td` or `th` element. A header can be indirectly
+targeted, or just _targeted_, through the `headers` attribute of other
+cells, transitively.
+
+Common DOM interface (Scala Web IDL):
+
+```scala
+trait HTMLTableCellElement extends HTMLElement {
+
+  var colSpan: Long
+  var rowSpan: Long
+
+  def headers: DOMSettableTokenList
+  def headers_=(value: DOMString): Unit
+
+  /** The position of the cell in the row's `cells` list, or -1 if not
+    * in a row.
+    *
+    * The value does not necessarily correspond to the _x_-position of
+    * the cell in the table, since cells can span multiple columns.
+    */
+  val cellIndex: Int
+}
+```
 
 #### 4.9.12 Processing model
 
