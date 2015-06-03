@@ -194,6 +194,70 @@ Scala equivalent of **t**.
 
 ## 4 ECMAScript binding
 
+### 4.1 ECMAScript environment
+
+### 4.2 ECMAScript type mapping
+
+### 4.3 ECMAScript-specific extended attributes
+
+#### 4.3.1 [ArrayClass]
+
+#### 4.3.2 [Clamp]
+
+#### 4.3.3 [Constructor]
+
+#### 4.3.4 [EnforceRange]
+
+#### 4.3.5 [Exposed]
+
+#### 4.3.6 [ImplicitThis]
+
+#### 4.3.7 [Global] and [PrimaryGlobal]
+
+#### 4.3.8 [LenientThis]
+
+#### 4.3.9 [NamedConstructor]
+
+#### 4.3.10 [NewObject]
+
+#### 4.3.11 [NoInterfaceObject]
+
+#### 4.3.12 [OverrideBuiltins]
+
+#### 4.3.13 [PutForwards]
+
+#### 4.3.14 [Replaceable]
+
+#### 4.3.15 [SameObject]
+
+#### 4.3.16 [TreatNonObjectAsNull]
+
+#### 4.3.17 [TreatNullAs]
+
+#### 4.3.18 [Unforgeable]
+
+#### 4.3.19 [Unscopeable]
+
+### 4.4 Security
+
+### 4.5 Interfaces
+
+### 4.6 Implements statements
+
+### 4.7 Platform objects implementing interfaces
+
+### 4.8 User objects implementing callback interfaces
+
+### 4.9 Invoking callback functions
+
+### 4.10 Exceptions
+
+### 4.11 Exception objects
+
+### 4.12 Creating and throwing exceptions
+
+### 4.13 Handling exceptions
+
 ## 5 Common definitions
 
 ## 6 Extensibility
