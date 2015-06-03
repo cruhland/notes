@@ -582,6 +582,49 @@ element_. Its DOM interface is `HTMLTableColElement`, the same as
 
 #### 4.9.5 The `tbody` element
 
+A collection of rows in a `table` (there may be more than one
+collection). Cannot be used if the `table` element has `tr` elements
+as children.
+
+DOM interface (Scala Web IDL):
+
+```scala
+trait HTMLTableSectionElement extends HTMLElement {
+
+  /** The `tr` elements of this table section. */
+  val rows: HTMLCollection
+
+  /** Creates a `tr` element and inserts it into this table section at
+    * `index`.
+    *
+    * The position given by `index` is relative to the rows in this
+    * table section. The index -1 is equivalent to inserting at the
+    * end.
+    *
+    * @throws IndexSizeError
+    *   if `index` is less than -1 or greater than the number of rows
+    *   in this  section.
+    *
+    * @return The created `tr` element.
+    */
+  def insertRow(index: Int = -1): HTMLElement
+
+  /** Removes the `tr` element at position `index` in this table
+    * section.
+    *
+    * The position is relative to the rows in this table section. The
+    * index -1 is equivalent to deleting the last row of the table
+    * section.
+    *
+    * @throws IndexSizeError
+    *   if `index` is less than -1, greater than the index of the last
+    *   row, or if there are no rows.
+    */
+  def deleteRow(index: Int): Unit
+
+}
+```
+
 #### 4.9.6 The `thead` element
 
 #### 4.9.7 The `tfoot` element
