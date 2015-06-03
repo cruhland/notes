@@ -627,9 +627,67 @@ trait HTMLTableSectionElement extends HTMLElement {
 
 #### 4.9.6 The `thead` element
 
+Contains the heading rows of the table. The DOM interface is
+`HTMLTableSectionElement`, the same as `tbody`.
+
 #### 4.9.7 The `tfoot` element
 
+Contains the summary (footer) rows of the table. The DOM interface is
+`HTMLTableSectionElement`, the same as `tbody`.
+
 #### 4.9.8 The `tr` element
+
+A row of table cells. Can appear inside `thead`, `tbody`, and `tfoot`
+elements, and also inside `table` directly, if there is no `tbody`
+element. Contains zero or more `td` or `th` elements (plus
+script-supporting elements).
+
+DOM interface (Scala Web IDL):
+
+```scala
+trait HTMLTableRowElement extends HTMLElement {
+
+  /** The position of the row in the `rows` list of its containing
+    * table, or -1 if the row isn't in a table.
+    */
+  val rowIndex: Int
+
+  /** The position of the row in the `rows` list of its containing
+    * table section, or -1 if the row isn't in a table section.
+    */
+  val sectionRowIndex: Int
+
+  /** The `td` and `th` children of the row. */
+  val cells: HTMLCollection
+
+  /** Create a `td` element and inserts it into the row at position
+    * `index`.
+    *
+    * The position is relative to the cells in the row. The index -1
+    * is equivalent to inserting at the end of the row.
+    *
+    * @throws IndexSizeError
+    *   if `index` is less than -1 or greater than the number of
+    *   cells.
+    *
+    * @return the created `td` element.
+    */
+  def insertCell(index: Int = -1): HTMLElement
+
+  /** Removes the `td` or `th` element at position `index` in the
+    * row.
+    *
+    * The position is relative to the cells in the row. The index -1
+    * is equivalent to deleting the last cell in the row.
+    *
+    * @throws IndexSizeError
+    *   if `index` is less than -1, greater than the index of the last
+    *   cell, or there are no cells.
+    */
+  def deleteCell(index: Int): Unit
+
+}
+```
 
 #### 4.9.9 The `td` element
 
