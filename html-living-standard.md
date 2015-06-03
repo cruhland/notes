@@ -546,9 +546,32 @@ trait HTMLTableElement extends HTMLElement {
 }
 ```
 
+The spec also provides advice on how to design tables appropriately.
+
 #### 4.9.2 The `caption` element
 
+A description of the table.
+
+DOM interface (Scala WebIDL):
+
+```scala
+trait HTMLTableCaptionElement extends HTMLElement
+```
+
 #### 4.9.3 The `colgroup` element
+
+A group of one or more columns in its parent table. It can either
+contain `col` elements or have a positive (greater than zero) `span`
+attribute. See the [table model](#4-9-12-processing-model) for more
+information.
+
+DOM interface (Scala Web IDL):
+
+```scala
+trait HTMLTableColElement extends HTMLElement {
+  var span: Long
+}
+```
 
 #### 4.9.4 The `col` element
 

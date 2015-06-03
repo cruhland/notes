@@ -130,6 +130,11 @@ The Web IDL values of this type are integers _n_ such that
 
 #### 3.10.8 unsigned long
 
+The Web IDL values of this type are integers _n_ such that 0 ≤ _n_ ≤
+4,294,967,295. There is no directly equivalent Scala type (all numeric
+primitive types in Scala are signed), but a `Long` should be used
+because it covers the entire range of values of this type.
+
 #### 3.10.9 long long
 
 #### 3.10.10 unsigned long long
