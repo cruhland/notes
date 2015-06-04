@@ -541,6 +541,10 @@ trait HTMLTableElement extends HTMLElement {
   def deleteRow(index: Int): Unit
 
   var sortable: Boolean
+
+  /** Removes all the `sorted` attributes that are causing the table
+    * to automatically sort its contents, if any.
+    */
   def stopSorting(): Unit
 
 }
@@ -716,6 +720,11 @@ trait HTMLTableHeaderCellElement extends HTMLTableCellElement {
 
   var sorted: DOMString
 
+  /** Act as if the user had indicated that this was to be the new
+    * primary sort column.
+    *
+    * The table won't actually be sorted until the script terminates.
+    */
   def sort(): Unit
 
 }
@@ -757,9 +766,23 @@ trait HTMLTableCellElement extends HTMLElement {
 
 #### 4.9.12 Processing model
 
+Detailed description of how tables work, for user agents to
+implement.
+
 #### 4.9.13 Table sorting model
 
+The `sortable` boolean attribute on `table` indicates, when present,
+that the table should be allowed to be sorted by the user.
+
+The `sorted` attribute of a `th` element indicates how to sort that
+column. The attribute can be empty, contain a number, contain the
+token `reversed`, or both. The number indicates the column's priority
+in the sort; 1 is higher priority than 2. The `reversed` token
+indicates that the sort direction is reversed.
+
 #### 4.9.14 Examples
+
+Some examples to help implementors with rendering of tables.
 
 ### 4.10 Forms
 
