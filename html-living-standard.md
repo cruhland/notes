@@ -3,23 +3,23 @@
 
 ## Summary of contents
 
-1. [**Introduction**](#introduction): informative overview
-1. [**Common infrastructure**](#common-infrastructure): definitions
+1. [**Introduction**](#1-introduction): informative overview
+1. [**Common infrastructure**](#2-common-infrastructure): definitions
    used throughout the spec
-1. [**Semantics, structure, and APIs of HTML documents**](#semantics-structure-and-apis-of-html-documents):
+1. [**Semantics, structure, and APIs of HTML documents**](#3-semantics-structure-and-apis-of-html-documents):
    the core concepts
-1. [**The elements of HTML**](#the-elements-of-html): detailed
+1. [**The elements of HTML**](#4-the-elements-of-html): detailed
    definition of all tags
 1. **Microdata**: labeling key-value data in a document
-1. [**User interaction**](#user-interaction)
+1. [**User interaction**](#6-user-interaction)
 1. **Loading Web pages**: how browsers should handle navigation between
    pages
-1. [**Web application APIs**](#web-application-apis): useful info for
-   building web apps
+1. [**Web application APIs**](#8-web-application-apis): useful info
+   for building web apps
 1. **Communication**: sending and receiving asynchronous messages
 1. **Web workers**: background (async) scripting
 1. **Web storage**: mechanisms for client-side data persistence
-1. [**The HTML syntax**](#the-html-syntax): rules for writing and
+1. [**The HTML syntax**](#12-the-html-syntax): rules for writing and
    parsing HTML
 1. **The XHTML syntax**: HTML in XML
 1. **Rendering**: recommendations for display
@@ -29,21 +29,25 @@
 1. **References**: external supporting documents
 1. **Acknowledgements**
 
-## Introduction
+## 1 Introduction
 
-### Where does this specification fit?
+### 1.1 Where does this specification fit?
 
 - Specs I definitely want to read: JavaScript, DOM, CSS, HTTP
 - Specs I might want to read: SVG, WebIDL, MathML, Unicode, MIME, URL
 
-### Audience
+### 1.2 Is this HTML5?
+
+### 1.3 Background
+
+### 1.4 Audience
 
 - Knowledge of DOM is required for a complete understanding of the
 spec
 - Helpful but optional knowledge: Web IDL, HTTP, XML, Unicode,
 character encodings, JavaScript, CSS
 
-### Scope
+### 1.5 Scope
 
 The spec is focused on specifying semantics of "normal" Web pages and
 Web applications. Applications of HTML in areas that require
@@ -51,7 +55,7 @@ high-performance software are not covered. Customized presentation of
 HTML documents is also not covered by the spec (but see the CSS
 spec).
 
-### History
+### 1.6 History
 
 Things seem to be a mess for Web specifications. The W3C stopped
 evolving HTML in the late 1990s and early 2000s, and instead focused
@@ -74,7 +78,7 @@ defines it. Rather than introduce artifical separations between
 versions of a spec, a living standard seems more in line with the
 practice of software development.
 
-### Design notes
+### 1.7 Design notes
 
 Due to the development history of HTML, the spec has many
 inconsistencies and redundancies. Some will take a while to fix, and
@@ -91,7 +95,7 @@ specs are succeeding, some design goals are being pursued:
   extending the meaning of HTML documents, while still conforming to
   the spec.
 
-### HTML vs XHTML
+### 1.8 HTML vs XHTML
 
 - HTML is used by most Web pages, and has lenient parsing so as to be
 backwards-compatible with older documents.
@@ -102,7 +106,9 @@ has very strict parsing requirements.
 Not all documents in one representation can be converted to documents
 in other representations.
 
-### How to read this specification
+### 1.9 Structure of this specification
+
+#### 1.9.1 How to read this specification
 
 From this section, where producers are document authors and consumers
 are things like Web browsers:
@@ -112,7 +118,7 @@ are things like Web browsers:
 These notes will focus on the producer side since I'm interested in
 writing Web pages, not implementing a browser.
 
-### Privacy concerns
+### 1.10 Privacy concerns
 
 Some features of HTML can be used to identify individual users on the
 Internet. This can be a good thing, such as using cookies to maintain
@@ -123,7 +129,7 @@ marked in the spec with a fingerprint symbol. Note that this symbol is
 not comprehensive, as almost anything can be used for fingerprinting
 with enough analysis.
 
-### A quick introduction to HTML
+### 1.11 A quick introduction to HTML
 
 Good summary of the basics. One interesting statement:
 
@@ -133,7 +139,7 @@ Good summary of the basics. One interesting statement:
 > is mostly phrased in terms of DOM trees, instead of the markup
 > described above.
 
-#### Writing secure applications with HTML
+#### 1.11.1 Writing secure applications with HTML
 
 - Interactive applications created with HTML can have vulnerabilities
 - Many potential attacks are through cross-origin actions
@@ -152,17 +158,17 @@ Good summary of the basics. One interesting statement:
     - Prevent by having your site become inactive if rendered in an
       iframe
 
-#### Common pitfalls to avoid when using the scripting APIs
+#### 1.11.2 Common pitfalls to avoid when using the scripting APIs
 
 Make sure elements and their event handlers are created in the same
 script, so that the event is always caught. Otherwise, an event might
 fire after an element is created but before its handler is added.
 
-#### How to catch mistakes when writing HTML: validators and conformance checkers
+#### 1.11.3 How to catch mistakes when writing HTML: validators and conformance checkers
 
 See list at https://validator.whatwg.org/.
 
-### Conformance requirements for authors
+### 1.12 Conformance requirements for authors
 
 - Presentational markup causes problems and has been removed from
 HTML. Use CSS instead.
@@ -170,7 +176,7 @@ HTML. Use CSS instead.
 invalid to avoid causing problems for authors. Use a conformance
 checker.
 
-## Common infrastructure
+## 2 Common infrastructure
 
 ### 2.1 Terminology
 
@@ -209,7 +215,7 @@ Basic rules and data types for the DOM.
 
 Provides namespace URLs.
 
-## Semantics, structure, and APIs of HTML documents
+## 3 Semantics, structure, and APIs of HTML documents
 
 ### 3.1 Documents
 
@@ -811,14 +817,36 @@ Specifies which elements can be _actually disabled_.
 Details about various ways HTML elements can be found using
 selectors.
 
-## User interaction
+## 6 User interaction
 
-TODO read in full
+### 6.1 The `hidden` attribute
 
-## Web application APIs
+### 6.2 Inert subtrees
+
+### 6.3 Activation
+
+### 6.4 Focus
+
+### 6.5 Assigning keyboard shortcuts
+
+### 6.6 Editing
+
+#### 6.6.1 Making document regions editable: The `contenteditable` content attribute
+
+#### 6.6.2 Making entire documents editable: The `designMode` IDL attribute
+
+#### 6.6.3 Best practices for in-page editors
+
+#### 6.6.4 Editing APIs
+
+#### 6.6.5 Spelling and grammar checking
+
+### 6.7 Drag and drop
+
+## 8 Web application APIs
 
 TODO outline, then fill in details as needed
 
-## The HTML syntax
+## 12 The HTML syntax
 
 TODO read non-parsing sections
