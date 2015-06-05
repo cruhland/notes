@@ -792,7 +792,51 @@ Some examples to help implementors with rendering of tables.
 
 ### 4.10 Forms
 
-TODO Short summary
+#### 4.10.1 Introduction
+
+#### 4.10.2 Categories
+
+#### 4.10.3 The `form` element
+
+#### 4.10.4 The `label` element
+
+#### 4.10.5 The `input` element
+
+#### 4.10.6 The `button` element
+
+#### 4.10.7 The `select` element
+
+#### 4.10.8 The `datalist` element
+
+#### 4.10.9 The `optgroup` element
+
+#### 4.10.10 The `option` element
+
+#### 4.10.11 The `textarea` element
+
+#### 4.10.12 The `keygen` element
+
+#### 4.10.13 The `output` element
+
+#### 4.10.14 The `progress` element
+
+#### 4.10.15 The `meter` element
+
+#### 4.10.16 The `fieldset` element
+
+#### 4.10.17 The `legend` element
+
+#### 4.10.18 Form control infrastructure
+
+#### 4.10.19 Attributes common to form controls
+
+#### 4.10.20 APIs for the text field selections
+
+#### 4.10.21 Constraints
+
+#### 4.10.22 Form submission
+
+#### 4.10.23 Resetting a form
 
 ### 4.11 Interactive elements
 
