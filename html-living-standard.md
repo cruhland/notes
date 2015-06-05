@@ -831,15 +831,9 @@ selectors.
 
 ### 6.6 Editing
 
-#### 6.6.1 Making document regions editable: The `contenteditable` content attribute
-
-#### 6.6.2 Making entire documents editable: The `designMode` IDL attribute
-
-#### 6.6.3 Best practices for in-page editors
-
-#### 6.6.4 Editing APIs
-
-#### 6.6.5 Spelling and grammar checking
+This section describes the `contenteditable` and `designMode`
+attributes, which enable rich-text editing of the elements to which
+they apply.
 
 ### 6.7 Drag and drop
 
