@@ -794,13 +794,103 @@ Some examples to help implementors with rendering of tables.
 
 #### 4.10.1 Introduction
 
+A detailed example showing how many of the form elements are commonly
+used.
+
 #### 4.10.2 Categories
 
+Collections of elements with common behavior or properties. I'll
+define these here if they are useful.
+
 #### 4.10.3 The `form` element
+
+Groups a collection of elements that are involved with accepting user
+input and sending it to a server for interpretation.
 
 #### 4.10.4 The `label` element
 
 #### 4.10.5 The `input` element
+
+Represents data fields of various types, most of which can be
+manipulated by users. The `type` enumerated attribute determines what
+purpose the element serves. If `type` is omitted, it defaults to
+`type="text"`.
+
+Depending on `type`, there are various content attributes, IDL
+(JavaScript) attributes, and events that apply to the element. These
+are detailed in a table in the spec.
+
+The `value` IDL attribute contains the data for the element, which the
+user can usually modify. It has a corresponding `value` content
+attribute.
+
+There is optional validation for `input` elements.
+
+Input elements are mutable by default, but can be made immutable by
+disabling the element or by enabling the `readonly` attribute.
+
+##### 4.10.5.1 States of the `type` attribute
+
+###### 4.10.5.1.1 Hidden state (`type=hidden`)
+
+###### 4.10.5.1.2 Text (`type=text`) state and Search state (`type=search`)
+
+In this state, the `input` element represents a single line of plain
+text input. The user should not be able to enter the carriage return
+or line feed characters. The `input` and `change` events apply to this
+element.
+
+###### 4.10.5.1.3 Telephone state (`type=tel`)
+
+###### 4.10.5.1.4 URL state (`type=url`)
+
+###### 4.10.5.1.5 E-mail state (`type=email`)
+
+###### 4.10.5.1.6 Password state (`type=password`)
+
+###### 4.10.5.1.7 Date and Time state (`type=datetime`)
+
+###### 4.10.5.1.8 Date state (`type=date`)
+
+###### 4.10.5.1.9 Month state (`type=month`)
+
+###### 4.10.5.1.10 Week state (`type=week`)
+
+###### 4.10.5.1.11 Time state (`type=time`)
+
+###### 4.10.5.1.12 Local Date and Time state (`type=datetime-local`)
+
+###### 4.10.5.1.13 Number state (`type=number`)
+
+###### 4.10.5.1.14 Range state (`type=range`)
+
+###### 4.10.5.1.15 Colour state (`type=color`)
+
+###### 4.10.5.1.16 Checkbox state (`type=checkbox`)
+
+###### 4.10.5.1.17 Radio Button state (`type=radio`)
+
+###### 4.10.5.1.18 File Upload state (`type=file`)
+
+###### 4.10.5.1.19 Submit Button state (`type=submit`)
+
+###### 4.10.5.1.20 Image Button state (`type=image`)
+
+###### 4.10.5.1.21 Reset Button state (`type=reset`)
+
+###### 4.10.5.1.22 Button state (`type=button`)
+
+##### 4.10.5.2 Implemention notes regarding localization of form controls
+
+##### 4.10.5.3 Common input element attributes
+
+##### 4.10.5.4 Common input element APIs
+
+##### 4.10.5.5 Common event behaviours
+
+The `input` event fires whenever the user modifies the `input` element
+data. The `change` event fires when the value is committed or the
+element loses focus; this always happens after the `input` event.
 
 #### 4.10.6 The `button` element
 
