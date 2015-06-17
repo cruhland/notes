@@ -1100,7 +1100,40 @@ they apply.
 
 ## 8 Web application APIs
 
-TODO outline, then fill in details as needed
+### 8.1 Scripting
+
+#### 8.1.1 Introduction
+
+#### 8.1.2 Enabling and disabling scripting
+
+#### 8.1.3 Processing model
+
+#### 8.1.4 Event loops
+
+#### 8.1.5 Events
+
+##### 8.1.5.1 Event handlers
+
+##### 8.1.5.2 Event handlers on elements, `Document` objects, and
+`Window` objects
+
+##### 8.1.5.3 Event firing
+
+##### 8.1.5.4 Events and the `Window` object
+
+### 8.2 Base64 utility methods
+
+### 8.3 Dynamic markup insertion
+
+### 8.4 Timers
+
+### 8.5 User prompts
+
+### 8.6 System state and capabilities
+
+### 8.7 Images
+
+### 8.8 Animation frames
 
 ## 12 The HTML syntax
 
