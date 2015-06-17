@@ -894,6 +894,21 @@ element loses focus; this always happens after the `input` event.
 
 #### 4.10.6 The `button` element
 
+Represents a user-clickable button. The button is labeled with the
+contents of the element.
+
+The `type` attribute specifies the behavior when the button is
+_activated_. It must have one of the following values:
+
+- `submit`: Submits the form that the button is associated with (if
+any).
+- `reset`: Resets (clears) the form that the button is associated with
+(if any).
+- `button`: Does nothing.
+- `menu`: Shows a drop-down menu.
+
+If `type` is not specified, it defaults to `submit`.
+
 #### 4.10.7 The `select` element
 
 #### 4.10.8 The `datalist` element
