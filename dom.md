@@ -29,6 +29,14 @@ be overridden.
 
 ## 2 Terminology
 
+### 2.1 Trees
+
+### 2.2 Strings
+
+### 2.3 Ordered sets
+
+### 2.4 Namespaces
+
 ## 3 Events
 
 ## 4 Nodes
