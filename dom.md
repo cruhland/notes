@@ -177,6 +177,67 @@ index x = length (before x (siblings x))
 
 ### 2.2 Strings
 
+For the purposes of this section, let's say that strings are lists of
+Unicode code points. We'll allow code points to be specified between
+single quotes, either with the literal value or with a hex code.
+
+```
+String: Type
+String = List CodePoint
+
+Option: (A: Type) -> Type where
+  None: Option A
+  Some: A -> Option A
+
+reduce: (a -> a -> a) -> List a -> Option a
+reduce _ Nil = None
+reduce _ (x :: Nil) = Some x
+reduce op (x :: y :: zs) = reduce op ((op x y) :: zs)
+
+_&&_: Bool -> Bool -> Bool
+True && q = q
+False && _ = False
+
+zipWith: (a -> b -> c) -> List a -> List b -> List c
+zipWith _ Nil _ = Nil
+zipWith _ _ Nil = Nil
+zipWith f (x :: xs) (y :: ys) = (f x y) :: (zipWith f xs ys)
+
+map: (a -> b) -> List a -> List b
+map _ Nil = Nil
+map f (x :: xs) = (f x) :: map f xs
+
+caseSensitiveCompare: String -> String -> Bool
+caseSensitiveCompare x y = reduce _&&_ (zipWith (_ == _) x y)
+
+toAsciiUppercase: CodePoint -> CodePoint
+toAsciiUppercase c = if c >= 'a' && c <= 'z' then c - 32 else c
+
+toAsciiLowercase: CodePoint -> CodePoint
+toAsciiLowercase c = if c >= 'A' && c <= 'Z' then c + 32 else c
+
+toAsciiUppercase: String -> String
+toAsciiUppercase s = map toAsciiUppercase s
+
+toAsciiLowercase: String -> String
+toAsciiLowercase s = map toAsciiLowercase s
+
+asciiCaseInsensitiveCompare: String -> String -> Bool
+asciiCaseInsensitiveCompare x y =
+  caseSensitiveCompare (toAsciiLowercase x) (toAsciiLowercase y)
+
+take: Nat -> List a -> List a
+take 0 _ = Nil
+take _ Nil = Nil
+take (S n) (x :: xs) = x :: (take n xs)
+
+_isPrefixMatch_: String -> String -> Bool
+pattern isPrefixMatch s =
+  ((length pattern) <= (length s)) &&
+    caseSensitiveCompare pattern (take (length pattern) s)
+
+```
+
 ### 2.3 Ordered sets
 
 ### 2.4 Namespaces
