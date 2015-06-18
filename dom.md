@@ -156,6 +156,11 @@ after: a -> List a -> List a
 after x Nil = Nil
 after x (y :: ys) = if (x == y) ys else after x ys
 
+siblings: obj -> List obj
+siblings x = match (parent x) where
+  Null => Nil
+  Some p => children p
+
 previousSibling: obj -> Nullable obj
 previousSibling x = last (before x (siblings x))
 
