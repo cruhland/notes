@@ -246,6 +246,24 @@ pattern isPrefixMatch s =
 
 ### 3.1 Introduction to "DOM Events"
 
+Summary of this section:
+
+- Event objects implement the `Event` interface or derivatives
+- Events can be _dispatched_ to objects that implement `EventTarget`
+- Event targets can react to events if they have _listeners_ for them
+- Listeners are added to targets with the `addEventListener()` method
+- Listeners are removed from targets with the `removeEventListener()`
+method
+- Events have a _type_ to distinguish events with different meanings
+- An event listener specifies a single event type that it reacts to
+- An event listener has a _callback_ function
+    - It's called when the listener reacts to an event
+    - The event is passed as the first argument
+- Events have a _target_ which indicates the object to which it was
+dispatched
+- Scripts can call `dispatchEvent()` on event targets to explicitly
+dispatch events
+
 ### 3.2 Interface `Event`
 
 ### 3.3 Interface `CustomEvent`
