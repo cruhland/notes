@@ -1104,18 +1104,49 @@ they apply.
 
 #### 8.1.1 Introduction
 
+There are several ways for scripts to be run on a document. The main
+ones are:
+
+- Execution of `script` elements
+- Browsing to `javascript:` URLs
+- Event handlers on DOM nodes
+- Embedded content like SVG which ties into scripting
+
 #### 8.1.2 Enabling and disabling scripting
+
+Script execution can be _enabled_ or _disabled_ in a document.
 
 #### 8.1.3 Processing model
 
+Details regarding how scripts should be executed by user agents.
+
 #### 8.1.4 Event loops
+
+Details on how event loops must be used to process events.
 
 #### 8.1.5 Events
 
 ##### 8.1.5.1 Event handlers
 
+- Objects can specify _event handlers_.
+- An event handler is an event listener on that object, as defined by
+the DOM spec.
+- The event handler's name is `on$event`, where `$event` is the name
+of the event that it handles.
+- Event handlers can specified with a content attribute on elements
+    - The name of the attribute is the same as the handler
+    - The contents of the attribute must be valid JavaScript code that
+    can be parsed as a function body.
+- When an event is dispatched to an object with an event handler:
+    - The JavaScript code for the handler is executed
+
 ##### 8.1.5.2 Event handlers on elements, `Document` objects, and
 `Window` objects
+
+List of supported handlers. Only the relevant ones are documented
+here.
+
+- `(on)click`: when an element is clicked by a pointing device
 
 ##### 8.1.5.3 Event firing
 
