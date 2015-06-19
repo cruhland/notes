@@ -244,6 +244,22 @@ pattern isPrefixMatch s =
 
 ## 3 Events
 
+### 3.1 Introduction to "DOM Events"
+
+### 3.2 Interface `Event`
+
+### 3.3 Interface `CustomEvent`
+
+### 3.4 Constructing events
+
+### 3.5 Defining event interfaces
+
+### 3.6 Interface `EventTarget`
+
+### 3.7 Dispatching events
+
+### 3.8 Firing events
+
 ## 4 Nodes
 
 ## 5 Ranges
