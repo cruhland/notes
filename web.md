@@ -1,0 +1,40 @@
+
+## Generic notes on Web techologies
+
+### Saving client-side app data to local files from the browser
+
+After Googling around for a bit, I found
+[this blog post](http://eligrey.com/blog/post/saving-generated-files-on-the-client-side/). However, it's from
+2011 and was likely to be out of date. Indeed, the W3C File API pages it linked to were deprecated. But the
+[_current_ W3C File API](http://www.w3.org/TR/FileAPI/) had some promising information, specifically in
+[Section 12, Requirements and Use Cases](http://www.w3.org/TR/FileAPI/#requirements):
+
+> - User agents should provide the ability to save a local file programmatically given an amount of data
+and a file name.
+
+>> **Note**
+>>
+>> While this specification doesn't provide an explicit API call to trigger downloads, the HTML5
+specification has addressed this. The `download` attribute of the `a` element
+[[HTML](http://www.w3.org/TR/FileAPI/#HTML)] initiates a download, saving
+a [`File`](http://www.w3.org/TR/FileAPI/#dfn-file) with the name specified. The combination of this API and the
+`download` attribute on `a` elements allows for the creation of files within web applications, and the ability
+to save them locally.
+
+However, the `a` element needs a URL to download the data _from_. Poking around in the HTML spec for `a` led to
+[RFC 2397](http://tools.ietf.org/html/rfc2397) on the `data:` URL scheme. This enables a kind of
+["immediate"](http://programmedlessons.org/AssemblyTutorial/Chapter-11/ass11_2.html) hyperlink, where
+the data is provided as part of the URL. Here's an example:
+
+```html
+<a href="data:text/plain,hello world" download="hello.txt">Download text</a>
+```
+
+That would render `Download text` as a normal hyperlink, except that clicking on it would cause your browser to
+"download" a file with content `hello world` and attempt to save it with the name `hello.txt`. Depending on how
+your browser is configured it might save it to a "Downloads" directory or ask you where you want to put it.
+Unfortunately, it might not work in your browser as apparently not all of them support the `data:` URL scheme.
+
+Linked from that initial blog post is the [FileSaver.js repo](https://github.com/eligrey/FileSaver.js), which
+solves the problem in a cross-browser way. Although keep in mind that the `FileSaver` API is no longer a proposed
+standard and so the library will not have any official support.
