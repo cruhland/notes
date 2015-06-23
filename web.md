@@ -1,5 +1,11 @@
 
-# Generic notes on Web techologies
+# Generic notes on Web technologies
+
+## JavaScript 6
+
+### `Array.prototype.push(...items)`
+
+The given `items` are concatenated at the end of the array, and the length of the result is returned.
 
 ## The DOM
 
