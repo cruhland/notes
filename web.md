@@ -1,5 +1,36 @@
 
-## Generic notes on Web techologies
+# Generic notes on Web techologies
+
+## The DOM
+
+In this section I'll describe the DOM interfaces using Scala syntax, since I'm familiar with it.
+
+```scala
+/** This trait cannot have a companion object defined. This trait is only mixed-in to objects in
+  * the main JavaScript thread, where `Window` is the global interface.
+  */
+trait ParentNode {
+  /** The child `Element`s of this node. */
+  val children: HTMLCollection
+  
+  // TODO incomplete
+}
+```
+
+## Web IDL
+
+### Extended attributes
+
+- `[Exposed=<global-interface-set>]`: indicates that the members of the interface are only available when
+code is executing with a global interface specified in `global-interface-set`. As an example,
+`[Exposed=Window]` means that the interface is only availabe in the main thread, while `[Exposed=Worker]`
+means that the inferface is only available in a web worker thread.
+- `[NoInterfaceObject]`: essentially means that there is no concrete object in JavaScript with the name
+of the interface. Such _interface objects_ are used to store constants and static methods for interfaces.
+The recommended use of this attribute is on "supplemental" interfaces that just provide additional methods
+for other interfaces (like mixins in Scala).
+
+## Miscellaneous
 
 ### Saving client-side app data to local files from the browser
 
