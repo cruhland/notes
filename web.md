@@ -43,6 +43,9 @@ trait ParentNode {
   /** The child `Element`s of this node. */
   val children: HTMLCollection
   
+  /** The first child of this node that is an `Element`; `null` otherwise. */
+  val firstElementChild: Option[Element]
+  
   // TODO incomplete
 }
 ```
