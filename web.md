@@ -6,6 +6,30 @@
 In this section I'll describe the DOM interfaces using Scala syntax, since I'm familiar with it.
 
 ```scala
+/** Integral type. Min value is 0. Max value is 2<sup>32</sup>-1. */
+type UnsignedInt
+
+/** TODO */
+type DOMString
+```
+
+```scala
+/** Only available in the `Window` thread. */
+trait HTMLCollection {
+  /** The number of elements in this collection. */
+  val length: UnsignedInt
+  
+  /** Return the element at the given index (in tree order), or `null` if no such element exists. */
+  def item(index: UnsignedInt): Option[Element]
+  
+  /** Return the element at the given index (in tree order), or `undefined` if no such element exists. */
+  def apply(index: UnsignedInt): Option[Element]
+  
+  // TODO incomplete
+}
+```
+
+```scala
 /** This trait cannot have a companion object defined. This trait is only mixed-in to objects in
   * the main JavaScript thread, where `Window` is the global interface.
   */
