@@ -63,6 +63,37 @@ of the interface. Such _interface objects_ are used to store constants and stati
 The recommended use of this attribute is on "supplemental" interfaces that just provide additional methods
 for other interfaces (like mixins in Scala).
 
+## DOM events
+
+The `input` event is fired whenever the state of a user input element is modified. The `change` event is fired
+in slightly different ways depending on the particular type of user input, but the rough condition is when the
+state of the element has been more permanently changed. For example, when a user is typing in a `text` input,
+`input` events will be fired for each keystroke (approximately). The `change` event will only be fired when
+the element loses focus, indicating that the user will not be making further edits.
+
+## HTML elements
+
+### The `input` element
+
+The `input` element represents many different forms of user-provided data, distinguished by the `type` attribute.
+
+#### File upload (`type=file`)
+
+Allows the user to select one or more files. Each file has a name, type, and body (contents).
+
+More than one file can be selected only if the `multiple` attribute is set.
+
+Both the `input` and `change` events are fired at this element when its state changes.
+
+The `accept` attribute is a hint about what kinds of files are acceptable. Its value is a comma-separated list
+of unique tokens, where a token can be one of:
+
+- `audio/*`, `video/*`, or `image/*`
+- MIME type without parameters
+- File extensions (e.g. `.txt`)
+
+After the user has selected a file or files, the `files` DOM attribute provides access to a `FileList` of them.
+
 ## Miscellaneous
 
 ### Saving client-side app data to local files from the browser
@@ -102,3 +133,19 @@ Unfortunately, it might not work in your browser as apparently not all of them s
 Linked from that initial blog post is the [FileSaver.js repo](https://github.com/eligrey/FileSaver.js), which
 solves the problem in a cross-browser way. Although keep in mind that the `FileSaver` API is no longer a proposed
 standard and so the library will not have any official support.
+
+### Loading local files into the browser so they can be processed by JavaScript
+
+This makes use of `FileReader` and related parts of the [W3C File API](http://www.w3.org/TR/FileAPI/).
+
+```JavaScript
+// TODO incomplete
+// Given an <input type="file"> element `input`:
+var successFunction = ???;
+var failureFunction = ???;
+var blob = input.files[0];
+var fileReader = new FileReader();
+fileReader.onloadend = successFunction;
+fileReader.onerror = failureFunction;
+fileReader.readAsText(blob);
+```
