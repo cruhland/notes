@@ -20,6 +20,10 @@ type DOMString
 ```
 
 ```scala
+case class DOMError(name: DOMString, message: DOMString = "")
+```
+
+```scala
 /** Only available in the `Window` thread. */
 trait HTMLCollection {
   /** The number of elements in this collection. */
@@ -94,6 +98,28 @@ of unique tokens, where a token can be one of:
 
 After the user has selected a file or files, the `files` DOM attribute provides access to a `FileList` of them.
 
+## HTML File API
+
+To read files, create an instance of `FileReader`:
+
+```JavaScript
+var fileReader = new FileReader();
+```
+
+Reading text files asynchronously is accomplished with `fileReader.readAsText(blob, label="utf-8")`, where `blob` is
+a `Blob` instance (usually a `File`) and `label` is the expected encoding of the data.
+
+After the read finishes successfully, the result can be obtained with `fileReader.result`, which will be a
+`DOMString` of the file contents.
+
+If the read fails, a `DOMError` describing the problem can be obtained with `fileReader.error`.
+
+Instances of `ProgressEvent` are fired at `fileReader` to report on asynchronous reads:
+- `load`: when a read completes successfully;
+- `error`: when a read fails.
+
+These events can be handled using the corresponding handler attributes on `fileReader`, e.g. `fileReader.onload`.
+
 ## Miscellaneous
 
 ### Saving client-side app data to local files from the browser
@@ -139,13 +165,21 @@ standard and so the library will not have any official support.
 This makes use of `FileReader` and related parts of the [W3C File API](http://www.w3.org/TR/FileAPI/).
 
 ```JavaScript
-// TODO incomplete
 // Given an <input type="file"> element `input`:
-var successFunction = ???;
-var failureFunction = ???;
-var blob = input.files[0];
-var fileReader = new FileReader();
-fileReader.onloadend = successFunction;
-fileReader.onerror = failureFunction;
-fileReader.readAsText(blob);
+input.addEventListener("change", function () {
+    var file = input.files[0];
+    if (!file) return;
+    
+    var fileReader = new FileReader();
+    
+    fileReader.onload = function () {
+        processFileContents(fileReader.result);
+    };
+    fileReader.onerror = function () {
+        var error = fileReader.error;
+        alert("A " + error.name + " occurred when reading " + file.name + ": " + error.message);
+    };
+    
+    fileReader.readAsText(file);
+});
 ```
