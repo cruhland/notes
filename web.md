@@ -38,7 +38,7 @@ trait HTMLCollection {
   // TODO incomplete
 }
 ```
-
+### [`ParentNode`](https://dom.spec.whatwg.org/#interface-parentnode)
 ```scala
 /** This trait cannot have a companion object defined. This trait is only mixed-in to objects in
   * the main JavaScript thread, where `Window` is the global interface.
@@ -49,6 +49,19 @@ trait ParentNode {
   
   /** The first child of this node that is an `Element`; `null` otherwise. */
   val firstElementChild: Option[Element]
+
+  // TODO incomplete
+}
+```
+
+### [`Node`](https://dom.spec.whatwg.org/#interface-node)
+
+```scala
+/** This trait is only available where `Window` is the global object. */
+trait Node extends EventTarget {
+
+  /** Add `node` as the last child of this node, and return it. */
+  def appendChild(node: Node): Node
   
   // TODO incomplete
 }
@@ -66,6 +79,8 @@ means that the inferface is only available in a web worker thread.
 of the interface. Such _interface objects_ are used to store constants and static methods for interfaces.
 The recommended use of this attribute is on "supplemental" interfaces that just provide additional methods
 for other interfaces (like mixins in Scala).
+- `[Unscopeable]`: the labeled interface member cannot be referenced by its name alone when used in a `with`
+statement on its context object. Probably done to prevent common programming mistakes.
 
 ## DOM events
 
